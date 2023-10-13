@@ -1,0 +1,37 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.section-header {
+  //.section-header__text
+  &__text {
+    line-height: math.div(31, 25);
+    font-style: normal;
+    font-weight: 400;
+
+    &:not(:last-child) {
+      margin-bottom: em(32, 25);
+    }
+  }
+
+  //.section-header__title
+  &__title {
+    color: $darkColor;
+    @include adaptiveValue("font-size", 60, 35);
+    line-height: math.div(75, 60);
+    font-weight: 700;
+    max-width: toRem(465);
+
+    &_big {
+      max-width: toRem(890);
+    }
+  }
+
+  &_lite {
+    .section-header__text {
+      color: #E3E6EC;
+    }
+
+    .section-header__title {
+      color: #FFF;
+    }
+  }
+
+}
