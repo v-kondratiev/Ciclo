@@ -1,7 +1,7 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .section-header {
   //.section-header__text
-  &__text {
+  &__label {
     line-height: math.div(31, 25);
     font-style: normal;
     font-weight: 400;
@@ -19,9 +19,23 @@
     font-weight: 700;
     max-width: toRem(465);
 
+    &:not(:last-child) {
+      margin-bottom: em(45, 60);
+
+      @media (min-width:$mobile) {
+        margin-bottom: em(132, 60);
+      }
+    }
+
     &_big {
       max-width: toRem(890);
     }
+  }
+
+  //.section-header__text
+  &__text {
+    line-height: math.div(45, 25);
+    max-width: toRem(540);
   }
 
   &_lite {
