@@ -167,7 +167,6 @@ body {
   counter-reset: item;
 
   &__section {
-
     &::after {
       position: absolute;
       top: 50%;
@@ -182,9 +181,7 @@ body {
       @media (max-width: $mobile) {
         top: toRem(20);
         right: 50%;
-
       }
-
     }
   }
 }
@@ -261,12 +258,10 @@ body {
 
 .screen-02 {
   &__container {
-
     @media (min-width: $mobile) {
       min-height: 100%;
       display: flex;
       align-items: flex-start;
-
     }
   }
 
@@ -278,13 +273,7 @@ body {
     @media (min-width: $mobile) {
       padding-right: toRem(20);
       padding-bottom: toRem(50);
-
     }
-
-  }
-
-  &__section-header {
-
   }
 
   &__image {
@@ -317,9 +306,6 @@ body {
     }
   }
 
-  &__section-header {
-  }
-
   &__image {
     flex: 0 1 50%;
     position: relative;
@@ -343,10 +329,6 @@ body {
     }
   }
 
-  &__values {
-
-  }
-
   .values-screen-03 {
     @include adaptiveValue("padding-top", 120, 45);
     display: grid;
@@ -357,17 +339,11 @@ body {
       grid-template-columns: repeat(2, auto);
       justify-content: space-between;
       gap: toRem(15);
-
-    }
-
-    &__label {
-
     }
 
     &__value {
       color: $darkColor;
       font-weight: 700;
-
     }
 
     &__line {
@@ -378,17 +354,14 @@ body {
         display: block;
         height: toRem(10);
         background-color: $darkColor;
-
       }
     }
   }
-
 }
 
 //======================================
 
 .screen-04 {
-
   &__container {
     min-height: 100%;
     display: flex;
@@ -404,19 +377,11 @@ body {
     }
   }
 
-  &__advantages {
-
-  }
-
   .advantages {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(toRem(220),1fr));
+    grid-template-columns: repeat(auto-fit, minmax(toRem(220), 1fr));
     @include adaptiveValue("gap", 50, 25);
-
-    &__item {
-
-    }
 
     &__icon {
       &:not(:last-child) {
@@ -433,15 +398,47 @@ body {
 
       &:not(:last-child) {
         @include adaptiveValue("margin-bottom", 32, 10);
-
       }
     }
 
     &__text {
       line-height: math.div(45, 25);
     }
-
-
   }
 }
+
+//======================================
+
+.screen-05 {
+  &__container {
+    @media (min-width: $mobile) {
+      min-height: 100%;
+      display: flex;
+    }
+  }
+
+  &__content {
+    flex: 0 1 50%;
+    align-self: center;
+    padding-top: toRem(50);
+    padding-bottom: toRem(30);
+    @media (min-width: $mobile) {
+      padding-right: toRem(20);
+      padding-bottom: toRem(50);
+    }
+  }
+
+  &__images {
+    flex: 0 1 50%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+
+    &__image-ibg{
+    }
+  }
+}
+
+//======================================
+
+
 
