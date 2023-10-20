@@ -47,5 +47,72 @@
       color: #FFF;
     }
   }
+}
+
+//==============================================================
+
+.text {
+  line-height: math.div(45, 25);
+}
+
+//==============================================================
+
+.title {
+  font-weight: 700;
+  @include adaptiveValue("font-size", 30, 20);
+  font-size: toRem(30);
+  line-height: math.div(38, 30);
+  color: $darkColor;
+}
+
+//==============================================================
+
+.services {
+  display: grid;
+  @include adaptiveValue("gap", 60, 30);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("gap", 50, 30);
+    @media (max-width: $mobileSmall) {
+      flex-direction: column;
+      align-items: start;
+    }
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 40);
+
+    }
+  }
+
+  &__icon {
+    flex: 0 0 toRem(60);
+    height: toRem(60);
+
+    img {
+      max-width: 100%;
+    }
+
+  }
+
+  &__title {
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 32, 15);
+    }
+  }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

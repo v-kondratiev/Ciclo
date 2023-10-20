@@ -390,12 +390,6 @@ body {
     }
 
     &__title {
-      font-weight: 700;
-      @include adaptiveValue("font-size", 30, 20);
-      font-size: toRem(30);
-      line-height: math.div(38, 30);
-      color: $darkColor;
-
       &:not(:last-child) {
         @include adaptiveValue("margin-bottom", 32, 10);
       }
@@ -432,13 +426,53 @@ body {
     flex: 0 1 50%;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+  }
 
-    &__image-ibg{
+  &__image-ibg{
+    @media (max-width: $mobile) {
+      @include adaptiveValue("margin-left", math.div(-$containerPadding, 2), -15);
+      @include adaptiveValue("margin-right", math.div(-$containerPadding, 2), -15);
+      img {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+      }
     }
   }
 }
 
 //======================================
+
+
+.screen-06 {
+  padding-top: toRem(50);
+  padding-bottom: toRem(30);
+
+  &__container {
+    @media (min-width: $tablet) {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__section-header {
+    flex: 0 1 50%;
+
+    @media (min-width: $tablet) {
+      padding-right: toRem(20);
+    }
+
+    @media (max-width: $tablet) {
+      padding-bottom: toRem(30);
+    }
+  }
+
+  &__services {
+    flex: 0 1 50%;
+  }
+}
 
 
 
