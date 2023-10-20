@@ -74,29 +74,25 @@
   &__item {
     display: flex;
     align-items: center;
-    @include adaptiveValue("gap", 50, 30);
+    @include adaptiveValue("gap", 50, 10);
     @media (max-width: $mobileSmall) {
       flex-direction: column;
-      align-items: start;
+      align-items: flex-start;
     }
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 60, 40);
-
-    }
+    //&:not(:last-child) {
+    //  @include adaptiveValue("margin-bottom", 60, 40);
+    //}
   }
 
   &__icon {
     flex: 0 0 toRem(60);
     height: toRem(60);
-
     img {
       max-width: 100%;
     }
-
   }
 
   &__title {
-
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 32, 15);
     }
