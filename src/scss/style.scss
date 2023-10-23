@@ -586,10 +586,60 @@ body {
 
 //======================================
 
+.screen-09 {
+  &__container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+
+  }
+
+  &__section-header {
+    flex: 0 0 33.333%;
+    display: flex;
+    justify-content: center;
+
+    .section-header {
+      text-align: center;
+      justify-self: center;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
 
 
+    }
+  }
 
+  &__items {
+    flex: 0 0 66.6667%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  &__item {
 
+  }
+}
+
+.item-screen-09 {
+  display: flex;
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+
+    .item-screen-09__body {
+      text-align: right;
+    }
+
+  }
+  &__body {
+    flex: 0 1 50%;
+    align-self: center;
+  }
+
+  &__image-ibg {
+    flex: 0 1 50%;
+
+  }
+
+}
 
 
 
