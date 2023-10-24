@@ -428,7 +428,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
   }
 
-  &__image-ibg{
+  &__image-ibg {
     @media (max-width: $mobile) {
       @include adaptiveValue("margin-left", math.div(-$containerPadding, 2), -15);
       @include adaptiveValue("margin-right", math.div(-$containerPadding, 2), -15);
@@ -497,9 +497,11 @@ body {
   &__image {
     flex: 0 1 50%;
     position: relative;
+
     img {
       max-width: 100%;
     }
+
     @media (min-width: $mobile) {
       @include adaptiveValue("right", -240, -15);
       img {
@@ -526,7 +528,7 @@ body {
     }
   }
 
-  &__content{
+  &__content {
     flex: 0 1 50%;
     align-self: center;
     padding-top: toRem(50);
@@ -547,6 +549,7 @@ body {
   &__image {
     flex: 0 1 50%;
     position: relative;
+
     img {
       max-width: 100%;
 
@@ -577,6 +580,7 @@ body {
       line-height: math.div(75, 60);
       font-weight: 700;
       color: $darkColor;
+
       &:not(:last-child) {
         margin-bottom: toRem(16, 60);
       }
@@ -587,59 +591,169 @@ body {
 //======================================
 
 .screen-09 {
+
   &__container {
     min-height: 100%;
     display: flex;
     flex-direction: row-reverse;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      padding-top: toRem(50);
+    }
 
   }
 
   &__section-header {
-    flex: 0 0 33.333%;
-    display: flex;
-    justify-content: center;
-
-    .section-header {
-      text-align: center;
-      justify-self: center;
-      writing-mode: vertical-lr;
-      transform: rotate(180deg);
+    @media (min-width: $tablet) {
+      flex: 0 0 33.333%;
+      display: flex;
+      justify-content: center;
 
 
+      .section-header {
+        text-align: center;
+        justify-self: center;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+
+        &__label {
+          line-height: math.div(31, 25);
+
+          &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 15);
+          }
+
+          //margin-bottom: 0;
+        }
+      }
+
+      .section-header__title {
+        @include adaptiveValue("margin-right", 32, 10);
+      }
     }
+    @media (max-width: $tablet) {
+      @include adaptiveValue("margin-bottom", 50, 20);
+    }
+
+    //@media (max-width: $mobile) {
+    //  margin-bottom: 0;
+    //}
   }
 
   &__items {
     flex: 0 0 66.6667%;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue("margin-left", math.div(-$containerPadding, 2), -15);
+      @include adaptiveValue("margin-right", math.div(-$containerPadding, 2), -15);
+    }
   }
+
   &__item {
-
   }
-}
 
-.item-screen-09 {
-  display: flex;
-  &:nth-child(odd) {
-    flex-direction: row-reverse;
+  .item-screen-09 {
+    display: flex;
 
-    .item-screen-09__body {
-      text-align: right;
+    &:nth-child(odd) {
+      @media (min-width: $mobileSmall) {
+        flex-direction: row-reverse;
+
+        .item-screen-09__body {
+          text-align: right;
+        }
+      }
+
+      @media (max-width: $mobileSmall) {
+        flex-direction: column;
+      }
     }
 
+    @media (max-width: $mobileSmall) {
+      flex-direction: column;
+    }
+
+    &__body {
+      flex: 0 1 50%;
+      align-self: center;
+      padding: toRem(20);
+      @media (max-width: $tablet) {
+        padding-right: toRem(15);
+        padding-left: toRem(15);
+      }
+    }
+
+    &__title {
+      &:not(:last-child) {
+        @include adaptiveValue('margin-bottom', 32, 15);
+      }
+    }
+
+    &__image-ibg {
+      flex: 0 1 50%;
+
+      @media (max-width: $tablet) {
+        padding-bottom: 50%;
+      }
+    }
   }
-  &__body {
-    flex: 0 1 50%;
-    align-self: center;
+
+}
+
+//======================================
+
+.screen-10 {
+
+  &__container {
+    display: flex;
+    min-height: 100%;
+    padding-bottom: toRem(50);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      padding-top: toRem(50);
+      gap: toRem(30);
+    }
+  }
+
+  &__item {
+    flex: 0 1 33.333%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: toRem(20);
+    }
   }
 
   &__image-ibg {
-    flex: 0 1 50%;
+    flex-grow: 0;
+    flex-basis: 57.407407%;
+    @media (max-width: $mobile) {
+      padding-bottom: 50%;
+    }
+  }
+
+  &__body {
+    padding-right: toRem(15);
+    @include adaptiveValue("padding-top", 60, 20, 1, 1920, 768);
 
   }
 
+  &__title {
+    padding-right: toRem(15);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 32, 15);
+    }
+  }
+
+  &__text {
+  }
 }
+
 
 
 
