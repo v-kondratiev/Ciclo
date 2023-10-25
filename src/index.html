@@ -309,14 +309,14 @@
                         </h2>
                     </div>
 
-                    <div class="screen-08__projects projects">
+                    <div data-watch class="screen-08__projects projects">
                         <div class="projects__item">
-                            <div class="projects__value">80</div>
+                            <div data-digits-counter data-digits-counter-speed="1500"  class="projects__value">80</div>
                             <div class="projects__label">Design Sprint</div>
                         </div>
 
                         <div class="projects__item">
-                            <div class="projects__value">75</div>
+                            <div data-digits-counter data-digits-counter-speed="1500"  class="projects__value">75</div>
                             <div class="projects__label">Figma Themes</div>
                         </div>
                     </div>
@@ -469,17 +469,17 @@
         <section data-fp-section class="page__section screen-12">
             <div class="screen-12__container">
                 <div class="screen-12__body">
-                    <div class="screen-12__items">
+                    <div  data-watch class="screen-12__items">
                         <div class="screen-12__item">
-                            <div class="screen-12__value">80</div>
+                            <div data-digits-counter data-digits-counter-speed="1500" class="screen-12__value">80</div>
                             <div class="screen-12__label">Business Projects</div>
                         </div>
                         <div class="screen-12__item">
-                            <div class="screen-12__value">55</div>
+                            <div data-digits-counter data-digits-counter-speed="1500" class="screen-12__value">55</div>
                             <div class="screen-12__label">Business Projects</div>
                         </div>
                         <div class="screen-12__item">
-                            <div class="screen-12__value">95</div>
+                            <div data-digits-counter data-digits-counter-speed="1500" class="screen-12__value">95</div>
                             <div class="screen-12__label">Business Projects</div>
                         </div>
                     </div>
@@ -490,6 +490,7 @@
         </section>
     </main>
 </div>
+@@include('html/_preloader.htm',{})
 @@include('html/_js.htm',{})
 </body>
 </html>
