@@ -825,6 +825,98 @@ body {
 
 //======================================
 
+.screen-12 {
+  &__container {
+    min-height: 100%;
+    display: flex;
+
+
+    @media (min-width: $mobile) {
+      align-items: center;
+      padding-top: toRem(20);
+      padding-bottom: toRem(20);
+      justify-content: center;
+
+    }
+
+    @media (max-width: $mobile) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+    position: relative;
+    padding-top: toRem(155);
+    padding-bottom: toRem(155);
+    @include adaptiveValue("padding-top", 155, 50);
+    @include adaptiveValue("padding-bottom", 155, 50);
+    @include adaptiveValue("padding-left", 240, 15);
+    @include adaptiveValue("padding-right", 240, 15);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(28, 31, 37, 0.60);
+
+      @media (max-width: $mobile) {
+        background: rgba(28, 31, 37, 0.90);
+      }
+    }
+
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    background-color: black;
+
+    @media (max-width: $mobile) {
+      object-fit: cover;
+    }
+  }
+
+  &__items  {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: toRem(30);
+
+    }
+
+  }
+
+  &__item  {
+    color: #E3E6EC;
+    flex: 0 1 33.333%;
+    text-align: center;
+  }
+
+  &__value {
+    font-weight: 700;
+    @include adaptiveValue('font-size', 60, 35);
+    line-height: math.div(75, 60);
+
+  }
+}
 
 
 
